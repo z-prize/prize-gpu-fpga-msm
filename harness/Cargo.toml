@@ -1,0 +1,22 @@
+[package]
+name = "fpga-msm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ark-ff = "0.3"
+ark-ec = { version = "0.3", features = ["parallel"] }
+ark-std = "0.3"
+clap = "3.2"
+rand = "0.8"
+ark-bls12-377 = "0.3"
+
+[dev-dependencies]
+criterion = { version = "0.3", features = [ "html_reports" ] }
+
+[[bench]]
+name = "msm"
+harness = false
+
+[profile.release]
+debug = true
